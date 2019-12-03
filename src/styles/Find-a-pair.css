@@ -8,12 +8,12 @@ body {
 }
 header, footer {
     height: 8vh;
-    background-color: rgb(74, 170, 74);
+    background-color: rgb(128, 42, 120);
 }
 main {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    background-color: rgb(103, 221, 103);
+    background-color: rgb(160, 55, 149);
 }
