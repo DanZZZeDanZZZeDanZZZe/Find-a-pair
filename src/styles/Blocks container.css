@@ -1,7 +1,6 @@
 #blocks-container {
     width: 40%;
     height: 95%;
-    background-color: rgb(156, 155, 155);
     display: grid;
     grid-gap: 0.5vh;
 }
