@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+header, footer {
+    height: 80px;
+    background-color: rgb(252, 132, 152);
+}
+main {
+    flex-grow: 1;
+    background-color: rgb(255, 92, 119);
+}
