@@ -1,12 +1,19 @@
 body {
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
 }
 header, footer {
-    height: 80px;
-    background-color: rgb(252, 132, 152);
+    height: 8vh;
+    background-color: rgb(74, 170, 74);
 }
 main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-grow: 1;
-    background-color: rgb(255, 92, 119);
+    background-color: rgb(103, 221, 103);
 }
