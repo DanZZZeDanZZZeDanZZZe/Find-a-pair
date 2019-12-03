@@ -13,6 +13,6 @@ function getRandColor(r = 256, g = 256, b = 256) {
     let randR = Math.floor(Math.random() * r),
     randG = Math.floor(Math.random() * g),
     randB = Math.floor(Math.random() * b),
-    colorCode = `#${randR.toString(16)}${randG.toString(16)}${randB.toString(16)}`;
+    colorCode = `rgb(${randR}, ${randG}, ${randB})`;
     return colorCode
 }
