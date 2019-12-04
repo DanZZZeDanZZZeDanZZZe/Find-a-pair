@@ -1,20 +1,18 @@
-function formAContainerOfBlocks(rows, columns, containerId, blockId){
+//написать завтра чтобы окрашивались блоки внутри сетки а не сама сетка
+function formAContainerOfBlocks(rows, columns, containerId, blockClass){
     let blocksContainer = document.getElementById(containerId),
-        count = createPartitions(rows, columns, blocksContainer, blockId),
+        count = createPartitions(rows, columns, blocksContainer, blockClass),
         arr = createColorBlocks(count),
         shuffleArr = shuffle(arr);
     fillBlocksInContainer(shuffleArr, blocksContainer);
-    console.log(arr);
-    console.log(shuffleArr);
-    console.log(arr.length);
 }
-function createPartitions(rows, columns, container, blockId) {
+function createPartitions(rows, columns, container, blockClass) {
     let count = rows*columns;
     container.style.gridTemplateRows = `repeat(${rows}, 1fr)`; 
     container.style.gridTemplateColumns = `repeat(${columns}, 1fr)`;
     for (let i = 0; i < count; i++) {
         let partition = document.createElement('div');
-        partition.className = blockId;
+        partition.className = blockClass;
         container.appendChild(partition);
     }
     return rows*columns;
