@@ -9,7 +9,7 @@ function createColorBlocks(count){
     }
     return arr;
 } 
-function getRandColor(r = 256, g = 256, b = 256) {
+function getRandColor(r = 50, g = 256, b = 50) {
     let randR = Math.floor(Math.random() * r),
     randG = Math.floor(Math.random() * g),
     randB = Math.floor(Math.random() * b),

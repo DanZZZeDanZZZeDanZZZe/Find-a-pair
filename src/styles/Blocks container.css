@@ -1,10 +1,18 @@
+.main-elements {
+    height: 95%;
+}
+#side-panel, #timer-container {
+    width: 30%;
+}
 #blocks-container {
     width: 40%;
-    height: 95%;
     display: grid;
     grid-gap: 0.5vh;
 }
 .partition {
     border-radius: 10px;
     background-color: rgb(233, 105, 105);
+}
+.partition:hover {
+    outline: 2px solid white;
 }
