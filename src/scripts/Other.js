@@ -1,4 +1,4 @@
-function shuffle(arr){
+function shuffle(arr) {
 	let j, temp;
 	for(let i = arr.length - 1; i > 0; i--){
 		j = Math.floor(Math.random()*(i + 1));
@@ -7,4 +7,7 @@ function shuffle(arr){
 		arr[i] = temp;
 	}
 	return arr;
+}
+function hasClass(element, className) {
+	return element.classList.contains(className);
 }
