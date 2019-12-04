@@ -24,15 +24,14 @@ window.onload = () => {
 function fillBlocksInContainer(arr, container){
     console.log('fillBlocksInContainer');
     let childs = container.childNodes;
+    console.log(childs);
     [].forEach.call(childs, (element, index) => {
-        if (index != 0) {
-            if (arr[index-1].hasOwnProperty('color')) {
-                console.log(`index = ${index-1}`);
+            if (arr[index].hasOwnProperty('color')) {
+                console.log(`index = ${index}`);
                 console.log(element);
-                console.log(arr[index-1]);
-                element.style.backgroundColor = arr[index-1].color;
+                console.log(arr[index]);
+                element.style.backgroundColor = arr[index].color;
             }
-        }   
     })
 }
 
