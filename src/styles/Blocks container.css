@@ -3,13 +3,22 @@
     display: grid;
     grid-gap: 0.5vh;
 }
-.partition {
+.partition, .partition:hover, .allottedPartition {
+    transition: 0.1s ease-in;
+}
+.partition, .allottedPartition {
     border-radius: 10px;
+}
+.partition {
     background-color: rgb(233, 105, 105);
 }
 .partition:hover {
-    box-shadow: 0 0 0 2px #fff;
+    box-shadow: 0 0 0 2px white;
+    transform: scale(1.1, 1.1);
 }
 .guessedPartition {
     opacity: 0;
+}
+.allottedPartition {
+    transform: scale(0.7, 0.7);
 }

@@ -18,14 +18,9 @@ function createPartitions(rows, columns, container, blockClass) {
     return rows*columns;
 }
 function fillBlocksInContainer(arr, container){
-    console.log('fillBlocksInContainer');
     let childs = container.childNodes;
-    console.log(childs);
     [].forEach.call(childs, (element, index) => {
             if (arr[index].hasOwnProperty('color')) {
-                console.log(`index = ${index}`);
-                console.log(element);
-                console.log(arr[index]);
                 element.style.backgroundColor = arr[index].color;
             }
     })
