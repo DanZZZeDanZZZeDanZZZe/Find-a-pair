@@ -17,10 +17,6 @@ function createPartitions(rows, columns, container, blockClass) {
     }
     return rows*columns;
 }
-window.onload = () => {
-    console.log('hy');
-    formAContainerOfBlocks(10, 8, "blocks-container", "partition");
-}
 function fillBlocksInContainer(arr, container){
     console.log('fillBlocksInContainer');
     let childs = container.childNodes;

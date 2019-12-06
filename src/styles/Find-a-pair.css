@@ -1,6 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
+    font-size: 18px;
     height: 100vh;
     width: 100%;
     margin: 0px;
@@ -16,4 +17,15 @@ main {
     justify-content: center;
     flex-grow: 1;
     background-color: rgb(160, 55, 149);
+}
+.main-elements {
+    height: 95%;
+}
+#side-panel, #timer-container {
+    width: 30%;
+}
+#timer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
