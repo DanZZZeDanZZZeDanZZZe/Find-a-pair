@@ -1,0 +1,37 @@
+.menu {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(241, 170, 236);
+    border-radius: 15px;
+    box-shadow: 0 -3px rgb(190, 103, 185) inset;
+}
+.menu-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 65%;
+    flex-grow: 1;
+    margin: 15px 0px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    border-radius: 15px;
+    background: rgb(160, 55, 149);
+    box-shadow: 0 -3px rgb(128, 42, 120) inset;
+    transition: 0.2s;
+} 
+.menu-item:hover { background: rgb(114, 161, 223); }
+.menu-item:active {
+    background: rgb(160, 55, 149);
+    box-shadow: 0 3px rgb(128, 42, 120) inset;
+}
+#main-menu-container {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}

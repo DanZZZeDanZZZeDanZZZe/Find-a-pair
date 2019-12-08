@@ -15,4 +15,10 @@ document.body.addEventListener('click', function(e) {
             }
         }
     }
+    if(e.target.id === 'main-menu-play') {
+        game = new Game(null);
+        removeElementById('main-menu');
+        swapId('main-menu-container', 'blocks-container');
+        formAContainerOfBlocks(10, 8, "blocks-container", "partition");
+    }
 }, true);    
