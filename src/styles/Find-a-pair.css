@@ -24,7 +24,7 @@ main {
 #side-panel, #timer-container {
     width: 30%;
 }
-#timer-container {
+#side-panel, #timer-container {
     display: flex;
     align-items: center;
     justify-content: center;

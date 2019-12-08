@@ -1,0 +1,16 @@
+#health-сontainer {
+    height: 10%;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.heart {
+   height: 100%;
+   opacity: 0.8;
+   animation: shake 0.1s 8;
+   animation-play-state: paused;
+}
+
+
+

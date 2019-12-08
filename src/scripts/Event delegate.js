@@ -9,16 +9,16 @@ document.body.addEventListener('click', function(e) {
                 game.buff.className = 'guessedPartition';
                 game.buff = null;     
             } else {
-                alert('не туда!')
+                healthIndcator.clear();
                 game.buff.className = 'partition'
                 game.buff = null;
+
             }
         }
     }
     if(e.target.id === 'main-menu-play') {
-        game = new Game(null);
         removeElementById('main-menu');
         swapId('main-menu-container', 'blocks-container');
-        formAContainerOfBlocks(10, 8, "blocks-container", "partition");
+        initializeTheGame(gameLevelConfiguration[0]);
     }
 }, true);    

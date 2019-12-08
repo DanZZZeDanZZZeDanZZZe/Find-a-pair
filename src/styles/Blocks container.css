@@ -2,6 +2,9 @@
     width: 40%;
     display: grid;
     grid-gap: 0.5vh;
+    background-color: black;
+    padding: 10px;
+    border-radius: 15px;
 }
 .partition, .partition:hover, .allottedPartition {
     transition: 0.1s ease-in;

@@ -1,10 +1,10 @@
 //написать завтра чтобы окрашивались блоки внутри сетки а не сама сетка
-function formAContainerOfBlocks(rows, columns, containerId, blockClass){
+function formAContainerOfBlocks(rows, columns, containerId, blockClass, colorConf){
     let blocksContainer = document.getElementById(containerId),
         count = createPartitions(rows, columns, blocksContainer, blockClass),
-        arr = createColorBlocks(count),
+        arr = createColorBlocks(count, colorConf),
         shuffleArr = shuffle(arr);
-    fillBlocksInContainer(shuffleArr, blocksContainer);
+    fillBlocksInContainer(shuffleArr, blocksContainer, colorConf);
 }
 function createPartitions(rows, columns, container, blockClass) {
     let count = rows*columns;

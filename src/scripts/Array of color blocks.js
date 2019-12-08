@@ -1,7 +1,12 @@
-function createColorBlocks(count){
+function createColorBlocks(count, colorConf){
     let arr = [];
     for (let i = 0; i < count / 2; i++) {
-        let colorCode = getRandColor();
+        let colorCode = null;
+        if (colorConf) {
+            colorCode = getRandColor.apply(this, colorConf);
+        } else {
+            colorCode = getRandColor();
+        }    
         let obj = {
             color: colorCode
         };
