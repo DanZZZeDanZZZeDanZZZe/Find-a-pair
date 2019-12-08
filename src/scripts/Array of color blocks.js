@@ -9,10 +9,14 @@ function createColorBlocks(count){
     }
     return arr;
 } 
-function getRandColor(r = 200, g = 256, b = 200) {
-    let randR = Math.floor(Math.random() * r),
-    randG = Math.floor(Math.random() * g),
-    randB = Math.floor(Math.random() * b),
-    colorCode = `rgb(${randR}, ${randG}, ${randB})`;
+function getRandColor(rEnd = 200, gEnd = 256, bEnd = 200, rStart = 0, gStart = 0, bStart = 0) {
+    let
+        r = rEnd - rStart,
+        g = gEnd - gStart,
+        b = bEnd - bStart,
+        randR = Math.floor(Math.random() * r),
+        randG = Math.floor(Math.random() * g),
+        randB = Math.floor(Math.random() * b),
+    colorCode = `rgb(${rStart + randR}, ${gStart + randG}, ${bStart + randB})`;
     return colorCode
 }
