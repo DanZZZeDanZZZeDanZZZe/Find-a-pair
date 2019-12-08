@@ -26,8 +26,9 @@ function initializeTheGame(levelConfiguration){
     formAContainerOfBlocks(10, 8, "blocks-container", "partition", colorConf);
     healthIndcator.create('side-panel',healths)
     timer.create('timer-container', gameTime);
-    setInterval(()=>{
+    let gameStream = setInterval(()=>{
         timer.reduceTime(1);
+        if (healthIndcator.count === 0) clearInterval(gameStream);
     },1000)
 }
 

@@ -11,7 +11,7 @@ let healthIndcator = {
         let element = document.getElementById(elementId)
         healthContainer = document.createElement('div');
         healthContainer.id = 'health-сontainer'; 
-        for(let i = 0; i <= count; i++) {
+        for(let i = 0; i < count; i++) {
             let healthImg = document.createElement('img');
             healthImg.setAttribute('src','src/image/heart.svg');
             healthImg.className = 'heart';
