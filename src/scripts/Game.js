@@ -33,13 +33,9 @@ function initializeTheGame(levelConfiguration) {
             removeChilds('timer-container');
             removeChilds('blocks-container');
             swapId('blocks-container', 'intermediate-menu-container');
-            createMenu('intermediate-menu-container', 
-            menuData[1].menuId, menuData[1].length,  menuData[1].idArr,  menuData[1].textArr);
+            createMenu('intermediate-menu-container', menuData[1]);
             clearInterval(gameStream);
         }
     },1000)
 }
-/*function deleteGame(elementId) {
-    let element = getId(elementId);
 
-}*/

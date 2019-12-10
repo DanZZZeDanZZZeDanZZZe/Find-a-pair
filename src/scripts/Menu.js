@@ -1,13 +1,13 @@
-function createMenu(containerId, menuId , length, idArr, textArr) {
+function createMenu(containerId, menuConf) {//menuId , length, idArr, textArr) {
     let container = getId(containerId);
     let menu = document.createElement('div');
     menu.className = 'menu';
-    menu.id = menuId;
-    for(let i = 0; i < length; i++) {
+    menu.id = menuConf.menuId;
+    for(let i = 0; i < menuConf.length; i++) {
         let menuItem = document.createElement('div');
         menuItem.className = 'menu-item';
-        menuItem.id = idArr[i];
-        menuItem.innerText = textArr[i]
+        menuItem.id = menuConf.idArr[i];
+        menuItem.innerText = menuConf.textArr[i];
         menu.appendChild(menuItem);
     }
     container.appendChild(menu);
