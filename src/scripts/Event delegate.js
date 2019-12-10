@@ -21,4 +21,9 @@ document.body.addEventListener('click', function(e) {
         swapId('main-menu-container', 'blocks-container');
         initializeTheGame(gameLevelConfiguration[0]);
     }
+    if(e.target.id === 'intermediate-menu-play') {
+        removeElementById('intermediate-menu');
+        swapId('intermediate-menu-container', 'blocks-container');
+        initializeTheGame(gameLevelConfiguration[0]);
+    }
 }, true);    

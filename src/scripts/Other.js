@@ -20,7 +20,7 @@ function swapId(oldId, newId) {
 }
 function removeChilds(elementId) {
 	let el = getId(elementId);
-	while (elementId.firstChild) {
+	while (el.firstChild) {
 		el.removeChild(el.firstChild);
 	}
 }

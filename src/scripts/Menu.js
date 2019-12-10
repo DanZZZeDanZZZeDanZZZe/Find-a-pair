@@ -18,5 +18,11 @@ menuData = [
         length: 4,
         idArr: ['main-menu-play', 'main-menu-highscores', 'main-menu-reference', 'main-menu-exit'],
         textArr: ['Играть', 'Рекорды', 'Справка', 'Выход'],
+    },
+    intermediateMenu = {
+        menuId: 'intermediate-menu',
+        length: 2,
+        idArr: ['intermediate-menu-play', 'intermediate-menu-exit'],
+        textArr: ['Сыграть ещё', 'В главное меню']
     }
 ]

@@ -13,11 +13,11 @@ let gameLevelConfiguration = [
     level1 = {
         name: 'Начало пути',
         colorConf: [250, 250, 250, 20, 20, 20],
-        time: 120,
+        time: 10,
         numberOfHealths: 3
     }
 ]
-function initializeTheGame(levelConfiguration){
+function initializeTheGame(levelConfiguration) {
     let 
         gameTime = levelConfiguration.time,
         colorConf = levelConfiguration.colorConf,
@@ -28,7 +28,18 @@ function initializeTheGame(levelConfiguration){
     timer.create('timer-container', gameTime);
     let gameStream = setInterval(()=>{
         timer.reduceTime(1);
-        if (healthIndcator.count === 0) clearInterval(gameStream);
+        if (healthIndcator.count === 0 || timer.time === 0) {
+            removeChilds('side-panel');
+            removeChilds('timer-container');
+            removeChilds('blocks-container');
+            swapId('blocks-container', 'intermediate-menu-container');
+            createMenu('intermediate-menu-container', 
+            menuData[1].menuId, menuData[1].length,  menuData[1].idArr,  menuData[1].textArr);
+            clearInterval(gameStream);
+        }
     },1000)
 }
+/*function deleteGame(elementId) {
+    let element = getId(elementId);
 
+}*/
