@@ -1,6 +1,10 @@
 class Game{
-    constructor(buff) {
-        this._buff = buff;
+    constructor(currentLevel) {
+        this._currentLevel = currentLevel;
+        this._buff = null;
+    };
+    get currentLevel() {
+        return this._currentLevel;
     };
     get buff() {
         return this._buff;
@@ -11,6 +15,7 @@ class Game{
 }
 let gameLevelConfiguration = [
     level1 = {
+        id: 'level1',
         name: 'Начало пути',
         colorConf: [250, 250, 250, 20, 20, 20],
         time: 10,
@@ -30,8 +35,9 @@ function initializeTheGame(levelConfiguration) {
     let 
         gameTime = levelConfiguration.time,
         colorConf = levelConfiguration.colorConf,
-        healths = levelConfiguration.numberOfHealths;
-    game = new Game(null);
+        healths = levelConfiguration.numberOfHealths,
+        id = levelConfiguration.id;
+    game = new Game(id);
     formAContainerOfBlocks(10, 8, "blocks-container", "partition", colorConf);
     healthIndcator.create('side-panel',healths)
     timer.create('timer-container', gameTime);
