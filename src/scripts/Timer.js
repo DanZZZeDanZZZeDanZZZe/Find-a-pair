@@ -43,8 +43,5 @@ let timer = {
         _time = 0;
     }
 }
-/*timer.create('timer-container',50);
-setInterval(()=>{
-    timer.reduceTime(1);
-},1000)*/
+
 

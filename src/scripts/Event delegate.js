@@ -9,6 +9,10 @@ document.body.addEventListener('click', function(e) {
                 e.target.className = 'guessedPartition';
                 game.buff.className = 'guessedPartition';
                 game.buff = null;     
+                game.destroyCouple();
+                if (game.totalCouples === game.destroyedCouples) {
+                    alert('победа');
+                }
             } else {
                 healthIndcator.clear();
                 game.buff.className = 'partition'
