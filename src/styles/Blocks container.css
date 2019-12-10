@@ -23,6 +23,7 @@
     opacity: 0;
 }
 .allottedPartition {
-    transform: scale(0.7, 0.7);
+    transform: scale(0.7, 0.7) rotateX(360deg);
+    transition: 0.3s ease-out;
 }
 

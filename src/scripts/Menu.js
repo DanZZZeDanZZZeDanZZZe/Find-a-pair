@@ -3,6 +3,14 @@ function createMenu(containerId, menuConf) {//menuId , length, idArr, textArr) {
     let menu = document.createElement('div');
     menu.className = 'menu';
     menu.id = menuConf.menuId;
+    if (menuConf.textHeadArr) {
+        menuConf.textHeadArr.forEach((element) => {
+            let head = document.createElement('div');
+            head.className = 'menu-head';
+            head.innerText = element;
+            menu.appendChild(head);
+        })
+    }
     for(let i = 0; i < menuConf.length; i++) {
         let menuItem = document.createElement('div');
         menuItem.className = 'menu-item';
@@ -29,7 +37,8 @@ menuData = [
         menuId: 'intermediate-menu',
         length: 2,
         idArr: ['intermediate-menu-play', 'intermediate-menu-exit'],
-        textArr: ['Сыграть ещё', 'В главное меню']
+        textArr: ['Сыграть ещё', 'В главное меню'],
+        textHeadArr: ['Поражение!']
     },
     levelMenu = {
         menuId: 'level-menu',

@@ -19,6 +19,7 @@ main {
     justify-content: center;
     flex-grow: 1;
     background-color: rgb(160, 55, 149);
+    animation: background 20s ease-out infinite;
 }
 .main-elements {
     height: 95%;

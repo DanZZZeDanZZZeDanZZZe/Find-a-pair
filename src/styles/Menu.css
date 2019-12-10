@@ -36,10 +36,17 @@
 } 
 .menu-item:hover { 
     background: rgb(114, 161, 223); 
+    transform: rotateX(25deg) rotateZ(2deg) scale(0.9);
 }
 .menu-item:active {
     background: rgb(160, 55, 149);
     box-shadow: 0 3px rgb(128, 42, 120) inset;
+}
+.menu-head {
+    font-size: 38px;
+    font-weight: bolder;
+    color: rgb(128, 42, 120);
+    animation: goHere 1.5s ease-in-out infinite;
 }
 #main-menu-container, #intermediate-menu-container {
     width: 40%;
