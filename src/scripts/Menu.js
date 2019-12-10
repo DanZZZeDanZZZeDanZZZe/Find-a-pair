@@ -12,6 +12,12 @@ function createMenu(containerId, menuConf) {//menuId , length, idArr, textArr) {
     }
     container.appendChild(menu);
 }
+function addLevelHolder(containerId){
+    let container = getId(containerId);
+    let holder = document.createElement('div');
+    holder.id = 'level-holder';
+    container.appendChild(holder);
+} 
 menuData = [
     mainMenu = {
         menuId: 'main-menu',
@@ -24,5 +30,25 @@ menuData = [
         length: 2,
         idArr: ['intermediate-menu-play', 'intermediate-menu-exit'],
         textArr: ['Сыграть ещё', 'В главное меню']
+    },
+    levelMenu = {
+        menuId: 'level-menu',
+        length: gameLevelConfiguration.length,
+        get idArr() {
+            let arr = [];
+            gameLevelConfiguration.forEach((el, index) => {
+                arr.push(`level${index}`);
+            });
+            console.log(arr);
+            return arr;
+        },
+        get textArr() {
+            let arr =  [];
+            gameLevelConfiguration.forEach((el) => {
+                arr.push(el.name);
+            });
+            console.log(arr);
+            return arr;
+        }
     }
 ]

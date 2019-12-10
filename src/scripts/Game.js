@@ -15,6 +15,15 @@ let gameLevelConfiguration = [
         colorConf: [250, 250, 250, 20, 20, 20],
         time: 10,
         numberOfHealths: 3
+    },
+    level2 = {
+        name: 'Пробиваясь сквозь траву'
+    },
+    level3 = {
+        name: 'Босиком по болоту'
+    },
+    level4 = {
+        name: 'Босиком по болоту'
     }
 ]
 function initializeTheGame(levelConfiguration) {
