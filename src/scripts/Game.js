@@ -29,10 +29,10 @@ let gameLevelConfiguration = [
         id: 'level1',
         name: 'Начало пути',
         colorConf: [250, 250, 250, 20, 20, 20],
-        time: 30,
+        time: 5,
         numberOfHealths: 3,
-        levelWidth: 5,
-        levelHeight: 6
+        levelWidth: 2,
+        levelHeight: 2
     },
     level2 = {
         name: 'Пробиваясь сквозь траву'
@@ -57,9 +57,10 @@ function initializeTheGame(levelConfiguration) {
     formAContainerOfBlocks(height, width, "blocks-container", "partition", colorConf);
     healthIndcator.create('side-panel',healths)
     timer.create('timer-container', gameTime);
-    let gameStream = setInterval(()=>{
+    gameStream = setInterval(()=>{
         timer.reduceTime(1);
         if (healthIndcator.count === 0 || timer.time === 0) {
+            console.log('a');
             removeChilds('side-panel');
             removeChilds('timer-container');
             removeChilds('blocks-container');

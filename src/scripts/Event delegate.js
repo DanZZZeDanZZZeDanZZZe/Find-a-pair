@@ -11,7 +11,12 @@ document.body.addEventListener('click', function(e) {
                 game.buff = null;     
                 game.destroyCouple();
                 if (game.totalCouples === game.destroyedCouples) {
-                    alert('победа');
+                    removeChilds('blocks-container');
+                    removeChilds('side-panel');
+                    removeChilds('timer-container');
+                    swapId('blocks-container', 'intermediate-menu-container');
+                    createMenu('intermediate-menu-container', menuData[3]);     
+                    clearInterval(gameStream);
                 }
             } else {
                 healthIndcator.clear();
@@ -21,25 +26,24 @@ document.body.addEventListener('click', function(e) {
             }
         }
     }
-    if(e.target.id === 'main-menu-play') {
+    if (e.target.id === 'main-menu-play') {
         removeElementById('main-menu');
         addLevelHolder('main-menu-container');
         createMenu("level-holder", menuData[2]);
     }
-    if(e.target.id === 'intermediate-menu-play') {
+    if (e.target.id === 'intermediate-menu-play') {
         let levelNum = game.currentLevel[game.currentLevel.length-1]-1;
         removeElementById('intermediate-menu');
         swapId('intermediate-menu-container', 'blocks-container');
-        alert(levelNum);
         initializeTheGame(gameLevelConfiguration[levelNum]);
     }
-    if(e.target.id === 'intermediate-menu-exit') {
+    if (e.target.id === 'intermediate-menu-exit') {
         removeElementById('intermediate-menu');
         swapId('intermediate-menu-container', 'main-menu-container');
         createMenu("main-menu-container", menuData[0]);
     }
 
-    if(e.target.id.substring(0,e.target.id.length-1) === 'level') {
+    if (e.target.id.substring(0,e.target.id.length-1) === 'level') {
         let levelNum = e.target.id[e.target.id.length-1];
         removeElementById('level-menu');
         removeElementById('level-holder');

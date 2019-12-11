@@ -20,8 +20,10 @@ function swapId(oldId, newId) {
 }
 function removeChilds(elementId) {
 	let el = getId(elementId);
-	while (el.firstChild) {
-		el.removeChild(el.firstChild);
+	if (el !== null) {
+		while (el.firstChild) {
+			el.removeChild(el.firstChild);
+		}
 	}
 }
 function removeElementById(elementId) {

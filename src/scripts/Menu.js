@@ -48,7 +48,6 @@ menuData = [
             gameLevelConfiguration.forEach((el, index) => {
                 arr.push(`level${index}`);
             });
-            console.log(arr);
             return arr;
         },
         get textArr() {
@@ -56,8 +55,15 @@ menuData = [
             gameLevelConfiguration.forEach((el) => {
                 arr.push(el.name);
             });
-            console.log(arr);
             return arr;
         }
+    },
+    gameOverMenu = {
+        menuId: 'intermediate-menu',
+        length: 2,
+        idArr: ['intermediate-menu-play', 'intermediate-menu-exit'],
+        textArr: ['Сыграть ещё', 'В главное меню'],
+        textHeadArr: ['Победа!']
     }
 ]
+
