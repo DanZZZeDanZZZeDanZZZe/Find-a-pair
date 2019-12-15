@@ -32,8 +32,8 @@ let gameLevelConfiguration = [
         colorConf: [250, 250, 250, 20, 20, 20],
         time: 65,
         numberOfHealths: 3,
-        levelWidth: 5,
-        levelHeight: 8
+        levelWidth: 2,
+        levelHeight: 2
     },
     level2 = {
         name: 'Пробиваясь сквозь траву'
@@ -61,7 +61,6 @@ function initializeTheGame(levelConfiguration) {
     gameStream = setInterval(()=>{
         timer.reduceTime(1);
         if (healthIndcator.count === 0 || timer.time === 0) {
-            console.log('a');
             removeChilds('side-panel');
             removeChilds('timer-container');
             removeChilds('blocks-container');

@@ -1,9 +1,10 @@
 #highscores-holder {
     overflow: auto;
     max-height: 500px;
-    background-color: rgb(114, 161, 223);/* rgb(241, 170, 236);*/
+    background-color: rgb(114, 161, 223);
     border-radius: 15px;
-    box-shadow: 0 -3px rgb(101, 143, 197);/*rgb(190, 103, 185) inset;*/
+    box-shadow: 0 -3px rgb(101, 143, 197);
+    color: white;
 }
 #highscores-holder {
     min-width: 80%;
@@ -11,12 +12,45 @@
 #highscore-table-head {
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
     height: 10%;
 }
+#highscore-table-head > div {
+    background-color: rgb(160, 55, 149);
+    border-radius: 15px;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    transition: 0.2s;
+}
+#highscore-table-head > div:hover {
+    background-color: rgb(241, 170, 236);
+    transform: rotateX(25deg) rotateZ(2deg) scale(0.9);
+}
+#highscore-table > div {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+#highscore-table > div:first-child {
+    color: rgb(160, 55, 149);
+    font-weight: bolder;
+    font-size: 1.2em;
+    padding-left: 50px;
+}
+#highscore-table > div > div {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .highscores-levels {
-    height: 200px;
+    height: 50px;
+    background-color: rgb(160, 55, 149);
 }
 #highscore-button-clear, #highscore-button-exit {
 

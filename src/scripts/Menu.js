@@ -64,6 +64,13 @@ menuData = [
         idArr: ['intermediate-menu-play', 'intermediate-menu-exit'],
         textArr: ['Сыграть ещё', 'В главное меню'],
         textHeadArr: ['Победа!']
+    },
+    gameOverMenu = {
+        menuId: 'intermediate-menu',
+        length: 2,
+        idArr: ['intermediate-menu-play', 'intermediate-menu-exit'],
+        textArr: ['Сыграть ещё', 'В главное меню'],
+        textHeadArr: ['Новый рекорд!']
     }
 ]
 

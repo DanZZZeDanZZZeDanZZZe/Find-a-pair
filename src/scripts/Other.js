@@ -34,6 +34,24 @@ function closeWindow() {
 		close();
 	}
 }
-function updateLocalStorage() {
-	
+function updateLocalStorage(level, gameTime) {
+	let addItem = function(){
+		let newItem = {
+			time: gameTime 
+		}
+		let newItemJSON = JSON.stringify(newItem);
+		localStorage.setItem(level, newItemJSON);
+	}
+	let itemJSON = localStorage.getItem(level);
+	if (itemJSON) {
+		let item = JSON.parse(itemJSON);
+		if (item.time > gameTime) {
+			localStorage.removeItem(level);
+			addItem();
+			return true;
+		}
+	} else {
+		addItem();
+		return true;
+	}
 }
