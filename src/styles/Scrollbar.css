@@ -1,12 +1,22 @@
-#level-holder::-webkit-scrollbar {
+#level-holder::-webkit-scrollbar, #highscores-holder::-webkit-scrollbar{
     width: 20px;
 }
-#level-holder::-webkit-scrollbar-track {
+#level-holder::-webkit-scrollbar-track, #highscores-holder::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     border-radius: 15px;
+}
+#level-holder::-webkit-scrollbar-thumb, #highscores-holder::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+}
+#level-holder::-webkit-scrollbar-track {
     background-color: rgb(128, 42, 120);
+}
+#highscores-holder::-webkit-scrollbar-track {
+    background-color: rgb(114, 161, 223);
 }
 #level-holder::-webkit-scrollbar-thumb {
     background-color: rgb(114, 161, 223);
-    border-radius: 15px;
+}
+#highscores-holder::-webkit-scrollbar-thumb {
+    background-color: rgb(128, 42, 120);
 }

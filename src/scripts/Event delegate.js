@@ -11,6 +11,7 @@ document.body.addEventListener('click', function(e) {
                 game.buff = null;     
                 game.destroyCouple();
                 if (game.totalCouples === game.destroyedCouples) {
+                    game.time = timer.time;
                     removeChilds('blocks-container');
                     removeChilds('side-panel');
                     removeChilds('timer-container');
@@ -26,10 +27,16 @@ document.body.addEventListener('click', function(e) {
             }
         }
     }
-    if (e.target.id === 'main-menu-play') {
+    if (-1 < e.target.id.indexOf('main-menu-') && e.target.id !== 'main-menu-exit') {
         removeElementById('main-menu');
-        addLevelHolder('main-menu-container');
-        createMenu("level-holder", menuData[2]);
+        if (e.target.id === 'main-menu-play') {
+            addLevelHolder('main-menu-container');
+            createMenu("level-holder", menuData[2]);
+        }
+        if (e.target.id === 'main-menu-highscores') {
+            swapId('main-menu-container', 'highscores-holder');
+            createHighscoreTable('highscores-holder');
+        }
     }
     if (e.target.id === 'intermediate-menu-play') {
         let levelNum = game.currentLevel[game.currentLevel.length-1]-1;
@@ -49,5 +56,8 @@ document.body.addEventListener('click', function(e) {
         removeElementById('level-holder');
         swapId('main-menu-container', 'blocks-container');
         initializeTheGame(gameLevelConfiguration[levelNum]);
+    }
+    if (e.target.id === 'main-menu-exit') {
+       closeWindow();
     }
 }, true);    

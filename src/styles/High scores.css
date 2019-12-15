@@ -1,0 +1,23 @@
+#highscores-holder {
+    overflow: auto;
+    max-height: 500px;
+    background-color: rgb(114, 161, 223);/* rgb(241, 170, 236);*/
+    border-radius: 15px;
+    box-shadow: 0 -3px rgb(101, 143, 197);/*rgb(190, 103, 185) inset;*/
+}
+#highscores-holder {
+    min-width: 80%;
+}
+#highscore-table-head {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    height: 10%;
+}
+.highscores-levels {
+    height: 200px;
+}
+#highscore-button-clear, #highscore-button-exit {
+
+}

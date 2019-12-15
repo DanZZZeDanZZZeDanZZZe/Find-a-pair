@@ -3,6 +3,7 @@ class Game{
         this._currentLevel = currentLevel;
         this._buff = null;
         this._destroyedCouples = null;
+        this._time = null;
         this._totalCouples = totalCouples;
     };
     get currentLevel() {
@@ -29,10 +30,10 @@ let gameLevelConfiguration = [
         id: 'level1',
         name: 'Начало пути',
         colorConf: [250, 250, 250, 20, 20, 20],
-        time: 5,
+        time: 65,
         numberOfHealths: 3,
-        levelWidth: 2,
-        levelHeight: 2
+        levelWidth: 5,
+        levelHeight: 8
     },
     level2 = {
         name: 'Пробиваясь сквозь траву'

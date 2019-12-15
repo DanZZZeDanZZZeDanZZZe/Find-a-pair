@@ -29,3 +29,11 @@ function removeChilds(elementId) {
 function removeElementById(elementId) {
 	document.getElementById(elementId).parentNode.removeChild(document.getElementById(elementId));
 }
+function closeWindow() {
+	if (confirm("Вы уверены что хотите выйти?")) {
+		close();
+	}
+}
+function updateLocalStorage() {
+	
+}
