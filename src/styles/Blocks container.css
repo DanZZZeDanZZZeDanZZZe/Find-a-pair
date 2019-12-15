@@ -5,6 +5,9 @@
     background-color: black;
     padding: 10px;
     border-radius: 15px;
+    animation: rot 15s ease-in-out infinite;
+    animation-delay: 5s;
+    animation-play-state: paused;
 }
 .partition, .partition:hover, .allottedPartition {
     transition: 0.1s ease-in;
@@ -13,11 +16,11 @@
     border-radius: 10px;
 }
 .partition {
-    background-color: rgb(233, 105, 105);
 }
 .partition:hover {
     box-shadow: 0 0 0 2px white;
     transform: scale(1.1, 1.1);
+    transition: 0.2s ease-in;
 }
 .guessedPartition {
     opacity: 0;
@@ -26,4 +29,5 @@
     transform: scale(0.7, 0.7) rotateX(360deg);
     transition: 0.3s ease-out;
 }
+
 

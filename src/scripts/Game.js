@@ -29,17 +29,27 @@ let gameLevelConfiguration = [
     level1 = {
         id: 'level1',
         name: 'Начало пути',
-        colorConf: [250, 250, 250, 20, 20, 20],
+        colorConf: [255, 255, 250, 0, 0, 0],
         time: 65,
         numberOfHealths: 3,
-        levelWidth: 2,
-        levelHeight: 2
+        levelWidth: 5,
+        levelHeight: 8,
+        coups: false,
+        rotate: true
     },
     level2 = {
         name: 'Пробиваясь сквозь траву'
     },
     level3 = {
-        name: 'Босиком по болоту'
+        id: 'level3',
+        name: 'Босиком по болоту',
+        colorConf: [50, 255, 50, 0, 0, 0],
+        time: 300,
+        numberOfHealths: 6,
+        levelWidth: 6,
+        levelHeight: 8,
+        coups: false,
+        rotate: false
     },
     level4 = {
         name: 'Босиком по болоту'
@@ -54,12 +64,21 @@ function initializeTheGame(levelConfiguration) {
         height = levelConfiguration.levelHeight,
         width = levelConfiguration.levelWidth,
         totalCouples = height * width / 2;
+        coups = levelConfiguration.coups, 
+        timerBuff = 0; 
     game = new Game(id, totalCouples);
     formAContainerOfBlocks(height, width, "blocks-container", "partition", colorConf);
+    let partitionsArr = document.getElementsByClassName('partition');
+    if (levelConfiguration.rotate) {
+        getId("blocks-container").style.animationPlayState = 'running';
+    } else {
+        getId("blocks-container").style.animationPlayState = 'paused';
+    }
     healthIndcator.create('side-panel',healths)
     timer.create('timer-container', gameTime);
     gameStream = setInterval(()=>{
         timer.reduceTime(1);
+        timerBuff++;
         if (healthIndcator.count === 0 || timer.time === 0) {
             removeChilds('side-panel');
             removeChilds('timer-container');
@@ -67,6 +86,10 @@ function initializeTheGame(levelConfiguration) {
             swapId('blocks-container', 'intermediate-menu-container');
             createMenu('intermediate-menu-container', menuData[1]);
             clearInterval(gameStream);
+        }
+        if (timerBuff === 15 && coups) {
+            timerBuff = 0;
+            toTurnPartitions(partitionsArr);
         }
     },1000)
 }

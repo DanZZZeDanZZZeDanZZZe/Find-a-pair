@@ -3,6 +3,7 @@ document.body.addEventListener('click', function(e) {
     if(hasClass(e.target, 'partition')) {
         if (game.buff === null) {
             e.target.className = 'allottedPartition';
+            e.target.style.animation = 'none';
             game.buff = e.target;
         } else {
             if (e.target.style.backgroundColor === game.buff.style.backgroundColor && game.buff != e.target) {

@@ -51,6 +51,8 @@
 .highscores-levels {
     height: 50px;
     background-color: rgb(160, 55, 149);
+    margin: 0px 10px;
+    border-radius: 15px;
 }
 #highscore-button-clear, #highscore-button-exit {
 
