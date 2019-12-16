@@ -38,7 +38,15 @@ let gameLevelConfiguration = [
         rotate: true
     },
     level2 = {
-        name: 'Пробиваясь сквозь траву'
+        name: 'Дискотека',
+        id: 'level2',
+        colorConf: [255, 255, 250, 0, 0, 0],
+        time: 120,
+        numberOfHealths: 4,
+        levelWidth: 6,
+        levelHeight: 9,
+        coups: true,
+        rotate: true
     },
     level3 = {
         id: 'level3',
