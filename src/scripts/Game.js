@@ -102,6 +102,17 @@ let gameLevelConfiguration = [
         levelHeight: 6,
         coups: true,
         rotate: true
+    },
+    level8 = {
+        id: 'level8',
+        name: 'Конец пути',
+        colorConf: [100, 100, 150, 30, 10, 120],
+        time: 600,
+        numberOfHealths: 5,
+        levelWidth: 7,
+        levelHeight: 7,
+        coups: true,
+        rotate: true
     }
 ]
 function initializeTheGame(levelConfiguration) {
