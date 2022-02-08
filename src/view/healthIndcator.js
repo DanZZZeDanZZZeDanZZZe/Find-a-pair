@@ -1,32 +1,32 @@
-import {getId} from '../utils'
+import { getId } from '../utils';
 
 export const healthIndcator = {
   _count: null,
-  set count(value) { 
-      this._count = value
+  set count(value) {
+    this._count = value;
   },
   get count() {
-      return this._count;
+    return this._count;
   },
   create(elementId, count) {
-      this._count = count;
-      let element = document.getElementById(elementId)
-      const healthContainer = document.createElement('div');
-      healthContainer.id = 'health-сontainer'; 
-      for(let i = 0; i < count; i++) {
-          let healthImg = document.createElement('img');
-          healthImg.setAttribute('src','heart.svg');
-          healthImg.className = 'heart';
-          healthContainer.appendChild(healthImg);
-      }
-      element.appendChild(healthContainer);
+    this._count = count;
+    let element = document.getElementById(elementId);
+    const healthContainer = document.createElement('div');
+    healthContainer.id = 'health-сontainer';
+    for (let i = 0; i < count; i++) {
+      let healthImg = document.createElement('img');
+      healthImg.setAttribute('src', 'heart.svg');
+      healthImg.className = 'heart';
+      healthContainer.appendChild(healthImg);
+    }
+    element.appendChild(healthContainer);
   },
   clear() {
-      this._count--;
-      let elem = getId('health-сontainer');
-      elem.lastChild.style.animationPlayState = 'running';
-      setTimeout(() => {
-          elem.removeChild(elem.lastChild);
-      }, 250);
-  }
-}
+    this._count--;
+    let elem = getId('health-сontainer');
+    elem.lastChild.style.animationPlayState = 'running';
+    setTimeout(() => {
+      elem.removeChild(elem.lastChild);
+    }, 250);
+  },
+};

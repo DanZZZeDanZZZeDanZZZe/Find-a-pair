@@ -1,2 +1,2 @@
-export {timer} from './timer'
-export {Game} from './Game'
+export { timer } from './timer';
+export { Game } from './Game';
