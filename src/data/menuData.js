@@ -23,14 +23,14 @@ export const menuData = [
     menuId: 'level-menu',
     length: gameLevelConfiguration.length,
     get idArr() {
-      let arr = [];
+      const arr = [];
       gameLevelConfiguration.forEach((el, index) => {
         arr.push(`level${index}`);
       });
       return arr;
     },
     get textArr() {
-      let arr = [];
+      const arr = [];
       gameLevelConfiguration.forEach(el => {
         arr.push(el.name);
       });

@@ -10,11 +10,11 @@ export const healthIndcator = {
   },
   create(elementId, count) {
     this._count = count;
-    let element = document.getElementById(elementId);
+    const element = document.getElementById(elementId);
     const healthContainer = document.createElement('div');
     healthContainer.id = 'health-сontainer';
     for (let i = 0; i < count; i++) {
-      let healthImg = document.createElement('img');
+      const healthImg = document.createElement('img');
       healthImg.setAttribute('src', 'heart.svg');
       healthImg.className = 'heart';
       healthContainer.appendChild(healthImg);
@@ -23,7 +23,7 @@ export const healthIndcator = {
   },
   clear() {
     this._count--;
-    let elem = getId('health-сontainer');
+    const elem = getId('health-сontainer');
     elem.lastChild.style.animationPlayState = 'running';
     setTimeout(() => {
       elem.removeChild(elem.lastChild);

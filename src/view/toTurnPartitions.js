@@ -1,3 +1,5 @@
+import { hasClass } from '../utils';
+
 export function toTurnPartitions(arr) {
   [].forEach.call(arr, element => {
     if (!hasClass(element, 'guessedPartition')) {

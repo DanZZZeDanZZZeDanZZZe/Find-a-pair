@@ -13,6 +13,7 @@ import {
   createHighscoreTable,
   formAContainerOfBlocks,
   healthIndcator,
+  toTurnPartitions,
 } from './view';
 import { menuData, gameLevelConfiguration } from './data';
 import {
@@ -22,6 +23,7 @@ import {
   closeWindow,
   removeChilds,
   getId,
+  updateLocalStorage,
 } from './utils';
 import { Game, timer } from './entities';
 
@@ -39,7 +41,7 @@ document.body.addEventListener(
       } else {
         if (
           e.target.style.backgroundColor === game.buff.style.backgroundColor &&
-          game.buff != e.target
+          game.buff !== e.target
         ) {
           e.target.className = 'guessedPartition';
           game.buff.className = 'guessedPartition';
@@ -51,7 +53,7 @@ document.body.addEventListener(
             removeChilds('side-panel');
             removeChilds('timer-container');
             swapId('blocks-container', 'intermediate-menu-container');
-            let score = updateLocalStorage(game.currentLevel, game.time);
+            const score = updateLocalStorage(game.currentLevel, game.time);
             if (score) {
               createMenu('intermediate-menu-container', menuData[4]);
             } else {
@@ -67,7 +69,7 @@ document.body.addEventListener(
       }
     }
     if (
-      -1 < e.target.id.indexOf('main-menu-') &&
+      e.target.id.indexOf('main-menu-') > -1 &&
       e.target.id !== 'main-menu-exit' &&
       e.target.id !== 'main-menu-reference'
     ) {
@@ -85,7 +87,7 @@ document.body.addEventListener(
       window.open('reference/reference.html');
     }
     if (e.target.id === 'intermediate-menu-play') {
-      let levelNum = game.currentLevel[game.currentLevel.length - 1] - 1;
+      const levelNum = game.currentLevel[game.currentLevel.length - 1] - 1;
       removeElementById('intermediate-menu');
       swapId('intermediate-menu-container', 'blocks-container');
       initializeTheGame(gameLevelConfiguration[levelNum]);
@@ -96,7 +98,7 @@ document.body.addEventListener(
       createMenu('main-menu-container', menuData[0]);
     }
     if (e.target.id.substring(0, e.target.id.length - 1) === 'level') {
-      let levelNum = e.target.id[e.target.id.length - 1];
+      const levelNum = e.target.id[e.target.id.length - 1];
       removeElementById('level-menu');
       removeElementById('level-holder');
       swapId('main-menu-container', 'blocks-container');
@@ -105,7 +107,7 @@ document.body.addEventListener(
     if (e.target.id === 'main-menu-exit') {
       closeWindow();
     }
-    if (-1 < e.target.id.indexOf('highscore-button-')) {
+    if (e.target.id.indexOf('highscore-button-') > -1) {
       removeChilds('highscores-holder');
       swapId('highscores-holder', 'main-menu-container');
       createMenu('main-menu-container', menuData[0]);
@@ -120,14 +122,14 @@ document.body.addEventListener(
 );
 
 function initializeTheGame(levelConfiguration) {
-  let gameTime = levelConfiguration.time;
-  let colorConf = levelConfiguration.colorConf;
-  let healths = levelConfiguration.numberOfHealths;
-  let id = levelConfiguration.id;
-  let height = levelConfiguration.levelHeight;
-  let width = levelConfiguration.levelWidth;
-  let totalCouples = (height * width) / 2;
-  let coups = levelConfiguration.coups;
+  const gameTime = levelConfiguration.time;
+  const colorConf = levelConfiguration.colorConf;
+  const healths = levelConfiguration.numberOfHealths;
+  const id = levelConfiguration.id;
+  const height = levelConfiguration.levelHeight;
+  const width = levelConfiguration.levelWidth;
+  const totalCouples = (height * width) / 2;
+  const coups = levelConfiguration.coups;
   let timerBuff = 0;
   game = new Game(id, totalCouples);
   formAContainerOfBlocks(
@@ -137,7 +139,7 @@ function initializeTheGame(levelConfiguration) {
     'partition',
     colorConf
   );
-  let partitionsArr = document.getElementsByClassName('partition');
+  const partitionsArr = document.getElementsByClassName('partition');
   if (levelConfiguration.rotate) {
     getId('blocks-container').style.animationPlayState = 'running';
   } else {

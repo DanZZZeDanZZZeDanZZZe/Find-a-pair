@@ -15,11 +15,11 @@ export function getId(id) {
   return document.getElementById(id);
 }
 export function swapId(oldId, newId) {
-  let el = getId(oldId);
+  const el = getId(oldId);
   el.id = newId;
 }
 export function removeChilds(elementId) {
-  let el = getId(elementId);
+  const el = getId(elementId);
   if (el !== null) {
     while (el.firstChild) {
       el.removeChild(el.firstChild);
@@ -37,16 +37,16 @@ export function closeWindow() {
   }
 }
 export function updateLocalStorage(level, gameTime) {
-  let addItem = function () {
-    let newItem = {
+  const addItem = function () {
+    const newItem = {
       time: gameTime,
     };
-    let newItemJSON = JSON.stringify(newItem);
+    const newItemJSON = JSON.stringify(newItem);
     localStorage.setItem(level, newItemJSON);
   };
-  let itemJSON = localStorage.getItem(level);
+  const itemJSON = localStorage.getItem(level);
   if (itemJSON) {
-    let item = JSON.parse(itemJSON);
+    const item = JSON.parse(itemJSON);
     if (item.time > gameTime) {
       localStorage.removeItem(level);
       addItem();
@@ -66,18 +66,20 @@ function getRandColor(
   gStart = 0,
   bStart = 0
 ) {
-  let r = rEnd - rStart,
-    g = gEnd - gStart,
-    b = bEnd - bStart,
-    randR = Math.floor(Math.random() * r),
-    randG = Math.floor(Math.random() * g),
-    randB = Math.floor(Math.random() * b),
-    colorCode = `rgb(${rStart + randR}, ${gStart + randG}, ${bStart + randB})`;
+  const r = rEnd - rStart;
+  const g = gEnd - gStart;
+  const b = bEnd - bStart;
+  const randR = Math.floor(Math.random() * r);
+  const randG = Math.floor(Math.random() * g);
+  const randB = Math.floor(Math.random() * b);
+  const colorCode = `rgb(${rStart + randR}, ${gStart + randG}, ${
+    bStart + randB
+  })`;
   return colorCode;
 }
 
 export function createColorBlocks(count, colorConf) {
-  let arr = [];
+  const arr = [];
   for (let i = 0; i < count / 2; i++) {
     let colorCode = null;
     if (colorConf) {
@@ -85,7 +87,7 @@ export function createColorBlocks(count, colorConf) {
     } else {
       colorCode = getRandColor();
     }
-    let obj = {
+    const obj = {
       color: colorCode,
     };
     for (let j = 0; j < 2; j++) arr.push(obj);

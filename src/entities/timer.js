@@ -1,9 +1,9 @@
-export let timer = {
+export const timer = {
   _startTime: null,
   _time: null,
   timerContainer: null,
   create(elementId, s) {
-    let element = document.getElementById(elementId);
+    const element = document.getElementById(elementId);
     this.timerContainer = document.createElement('div');
     this.timerContainer.className = 'timer-container';
     timer.time = s;
@@ -11,8 +11,8 @@ export let timer = {
     element.appendChild(this.timerContainer);
   },
   convert() {
-    let s = this._time % 60;
-    let m = (this._time - s) / 60;
+    const s = this._time % 60;
+    const m = (this._time - s) / 60;
     let sText, mText;
     if (s >= 10) {
       sText = `${s}`;
