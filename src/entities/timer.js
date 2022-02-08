@@ -1,18 +1,18 @@
-let timer = {
+export let timer = {
     _startTime: null,
     _time: null,
     timerContainer: null,
-    create: (elementId, s) => {
+    create(elementId, s) {
         let element = document.getElementById(elementId)
-        timerContainer = document.createElement('div');
-        timerContainer.className = 'timer-container'; 
+        this.timerContainer = document.createElement('div');
+        this.timerContainer.className = 'timer-container'; 
         timer.time = s;
         timer.startTime = s;
-        element.appendChild(timerContainer)
+        element.appendChild(this.timerContainer)
     },
-    convert: () => {
-        let s = _time % 60;
-        let m = (_time - s) / 60;
+    convert() {
+        let s = this._time % 60;
+        let m = (this._time - s) / 60;
         let sText, mText;
         if (s >= 10) {
             sText  = `${s}`
@@ -24,35 +24,35 @@ let timer = {
         } else {
             mText  = `0${m}`
         }
-        timerContainer.innerText = mText+':'+sText;
+        this.timerContainer.innerText = mText+':'+sText;
     },
     set startTime(value) { 
-        _startTime = value
+        this._startTime = value
     },
     set time(value) { 
-        _time = value
+        this._time = value
         this.convert();
     },
     get time() {
-        return _time;
+        return this._time;
     },
     get startTime() {
-        return _startTime;
+        return this._startTime;
     },
     get elapsedTime() {
         return timer.startTime - timer.time;
     },
     reduceTime(s) {
-        if (s > _time) {
+        if (s > this._time) {
             this.clearTime();
         } else {
-            _time = _time - s; 
+            this._time = this._time - s; 
             this.convert();
         }
     },
     clearTime() {
-        _time = 0;
-        _startTime = 0;
+        this._time = 0;
+        this._startTime = 0;
     }
 }
 

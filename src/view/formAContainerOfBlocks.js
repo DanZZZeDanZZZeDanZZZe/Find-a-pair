@@ -1,10 +1,5 @@
-function formAContainerOfBlocks(rows, columns, containerId, blockClass, colorConf){
-    let blocksContainer = document.getElementById(containerId),
-        count = createPartitions(rows, columns, blocksContainer, blockClass),
-        arr = createColorBlocks(count, colorConf),
-        shuffleArr = shuffle(arr);
-    fillBlocksInContainer(shuffleArr, blocksContainer, colorConf);
-}
+import {createColorBlocks, shuffle} from '../utils'
+
 function createPartitions(rows, columns, container, blockClass) {
     let count = rows*columns;
     container.style.gridTemplateRows = `repeat(${rows}, 1fr)`; 
@@ -16,6 +11,7 @@ function createPartitions(rows, columns, container, blockClass) {
     }
     return rows*columns;
 }
+
 function fillBlocksInContainer(arr, container){
     let childs = container.childNodes;
     [].forEach.call(childs, (element, index) => {
@@ -24,14 +20,11 @@ function fillBlocksInContainer(arr, container){
             }
     })
 }
-function toTurnPartitions(arr){
-    [].forEach.call(arr, (element) => {
-        if(!hasClass(element, 'guessedPartition')) {
-            element.style.filter = 'contrast(0%)';
-            setTimeout(() => {
-                element.style.filter = 'contrast(100%)';
-            }, 6000)
-        }
-    });
-}
 
+export function formAContainerOfBlocks(rows, columns, containerId, blockClass, colorConf){
+    let blocksContainer = document.getElementById(containerId),
+        count = createPartitions(rows, columns, blocksContainer, blockClass),
+        arr = createColorBlocks(count, colorConf),
+        shuffleArr = shuffle(arr);
+    fillBlocksInContainer(shuffleArr, blocksContainer, colorConf);
+}

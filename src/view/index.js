@@ -1,0 +1,6 @@
+export {formAContainerOfBlocks} from './formAContainerOfBlocks'
+export {toTurnPartitions} from './toTurnPartitions'
+export {createHighscoreTable} from './createHighscoreTable'
+export {healthIndcator} from './healthIndcator'
+export {createMenu} from './createMenu'
+export {addLevelHolder} from './addLevelHolder'
