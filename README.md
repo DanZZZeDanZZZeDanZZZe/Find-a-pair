@@ -1,5 +1,7 @@
 # Find-a-pair
 
+![Game screenshot](reference/img/5.PNG)
+
 ## Русская версия
 
 ### О проекте
